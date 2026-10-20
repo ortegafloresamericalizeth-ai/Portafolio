@@ -40,7 +40,7 @@ footer{text-align:center;color:var(--mute);font-size:.85rem;padding:50px 24px 40
 </style></head>
 <body>
 <header><strong id="hn">Mi portafolio</strong>
-<nav><a href="#inicio">Inicio</a><a href="#cv">Mi CV</a><a href="#proyectos">Proyectos</a><a href="#contacto">Contacto</a><a href="index.html">Editar datos</a></nav></header>
+<nav><a href="#inicio">Inicio</a><a href="#cv">Mi CV</a><a href="#proyectos">Proyectos</a><a href="#contacto">Contacto</a></nav></header>
 
 <section id="inicio" class="hero">
   <div id="avatar"></div>
@@ -62,7 +62,7 @@ footer{text-align:center;color:var(--mute);font-size:.85rem;padding:50px 24px 40
   </div>
 </section>
 
-<section id="proyectos"><h2>Proyectos</h2><p class="lead">Los que registraste en el editor.</p><div class="grid" id="plist"></div></section>
+<section id="proyectos"><h2>Proyectos</h2><p class="lead">Mis proyectos más recientes.</p><div class="grid" id="plist"></div></section>
 
 <section id="contacto"><h2>Contacto</h2><div class="row" id="links"></div></section>
 <footer>Portafolio digital</footer>
@@ -86,14 +86,14 @@ if(c.correo)L.push(`<a class="btn alt" href="mailto:${esc(c.correo)}">${esc(c.co
 const url=u=>/^https?:\/\//.test(u)?u:"https://"+u;
 if(c.github)L.push(`<a class="btn alt" target="_blank" rel="noopener" href="${esc(url(c.github))}">GitHub</a>`);
 if(c.linkedin)L.push(`<a class="btn alt" target="_blank" rel="noopener" href="${esc(url(c.linkedin))}">LinkedIn</a>`);
-$("#links").innerHTML=L.join("")||'<p class="lead">Agrega tu correo, GitHub y LinkedIn en el editor.</p>';
+$("#links").innerHTML=L.join("")||'<p class="lead">Próximamente.</p>';
 
 /* Proyectos */
 $("#plist").innerHTML=S.proj.length?S.proj.map(p=>`<article class="card"><h3>${esc(p.nombre)}</h3>
  <div><span class="chip">${esc(p.tipo)}</span><span class="chip st">${esc(p.estado)}</span></div>
  <div class="meta">${[p.contexto,p.fecha].filter(Boolean).map(esc).join(" | ")}</div>
  ${p.problema?`<p>${esc(p.problema)}</p>`:""}${p.tecnologias?`<div class="meta">${esc(p.tecnologias)}</div>`:""}
- ${/^https?:\/\//.test(p.enlace||"")?`<a href="${esc(p.enlace)}" target="_blank" rel="noopener">Ver evidencia</a>`:""}</article>`).join(""):'<div class="empty">Aún no hay proyectos. Agrégalos en <a href="index.html">el editor</a>.</div>';
+ ${/^https?:\/\//.test(p.enlace||"")?`<a href="${esc(p.enlace)}" target="_blank" rel="noopener">Ver evidencia</a>`:""}</article>`).join(""):'<div class="empty">Aún no hay proyectos.</div>';
 
 /* CV en PDF */
 const V=$("#viewer"),drop=$("#drop"),file=$("#file");
