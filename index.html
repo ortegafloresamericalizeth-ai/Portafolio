@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mi portafolio digital</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css"></head>
+<body>
+<div class="shell">
+<aside>
+  <h1>Mi portafolio digital</h1>
+  <p>Ingeniería Informática, 5.º semestre</p>
+  <nav role="tablist" aria-label="Secciones">
+    <button role="tab" data-t="cv" aria-selected="true">Mi CV</button>
+    <button role="tab" data-t="pr" aria-selected="false">Mis proyectos</button>
+    <button role="tab" data-t="ev" aria-selected="false">Otras evidencias</button>
+  </nav>
+  <div class="prog"><strong>Lo obligatorio</strong>
+    <ul><li id="p1">○ CV completo</li><li id="p2">○ Mínimo 3 proyectos</li></ul></div>
+</aside>
+<main>
+<section id="s-cv" class="on">
+  <h2>Mi CV</h2>
+  <p class="lead">Llena los campos y tu CV se arma a la derecha. Cuando esté listo, guárdalo como PDF.</p>
+  <div class="cols">
+    <div class="panel editor" id="cvform">
+      <label>Nombre completo<input data-k="nombre" autocomplete="name"></label>
+      <label>Título o perfil<input data-k="titulo" placeholder="Estudiante de Ingeniería Informática, 5.º semestre"></label>
+      <label>Presentación <small>(3 a 5 líneas)</small><textarea data-k="resumen"></textarea></label>
+      <label>Formación <small>(una por línea)</small><textarea data-k="formacion"></textarea></label>
+      <label>Habilidades técnicas <small>(separadas por comas)</small><textarea data-k="tecnicas"></textarea></label>
+      <label>Habilidades blandas <small>(separadas por comas)</small><input data-k="blandas"></label>
+      <label>Herramientas <small>(separadas por comas)</small><input data-k="herramientas"></label>
+      <label>Idiomas y cursos <small>(uno por línea, solo reales)</small><textarea data-k="cursos"></textarea></label>
+      <div class="two">
+        <label>Correo profesional<input data-k="correo" type="email"></label>
+        <label>GitHub<input data-k="github" placeholder="github.com/usuario"></label>
+        <label>LinkedIn<input data-k="linkedin"></label>
+        <label>Ciudad <small>(solo ciudad)</small><input data-k="ciudad"></label>
+      </div>
+      <p class="note">Protege tu privacidad: no pongas CURP, domicilio, teléfono personal ni fecha completa de nacimiento. No inventes experiencia.</p>
+    </div>
+    <div>
+      <div id="paper" aria-live="polite"></div>
+      <div class="row"><button class="btn" id="print">Guardar como PDF</button><button class="btn alt" id="copy">Copiar como texto</button></div>
+      <p class="note nolive">En el cuadro de impresión elige “Guardar como PDF”. Los proyectos que registres (hasta 3) se incluyen solos.</p>
+    </div>
+  </div>
+</section>
+
+<section id="s-pr">
+  <h2>Mis proyectos</h2>
+  <p class="lead">Registra al menos tres proyectos de software, bases de datos, sitios web, IoT o prototipos. Si aún no están terminados, indica su estado real.</p>
+  <div class="panel editor" id="pform">
+    <div class="two">
+      <label>Nombre del proyecto<input data-p="nombre"></label>
+      <label>Tipo<select data-p="tipo"><option>Software</option><option>Aplicación móvil</option><option>Sitio web</option><option>Base de datos</option><option>IoT o prototipo</option><option>Otro</option></select></label>
+      <label>Asignatura o contexto<input data-p="contexto"></label>
+      <label>Fecha <small>(mes y año)</small><input data-p="fecha" placeholder="Mayo 2026"></label>
+      <label>Estado<select data-p="estado"><option>Idea</option><option>En desarrollo</option><option>En prueba</option><option>Finalizado</option></select></label>
+      <label>Enlace de evidencia <small>(repositorio, demo, video)</small><input data-p="enlace" type="url" placeholder="https://"></label>
+    </div>
+    <label>Problema que atiende y usuarios<textarea data-p="problema"></textarea></label>
+    <label>Tecnologías y herramientas<input data-p="tecnologias"></label>
+    <label>Mi aportación <small>(qué hice yo)</small><textarea data-p="rol"></textarea></label>
+    <label>Resultados, dificultades y mejoras pendientes<textarea data-p="resultado"></textarea></label>
+    <p class="note">No compartas contraseñas, datos de usuarios ni código sin autorización.</p>
+    <div class="row"><button class="btn" id="padd">Agregar proyecto</button><button class="btn alt" id="pcancel" hidden>Cancelar edición</button></div>
+  </div>
+  <div class="grid" id="plist"></div>
+</section>
+
+<section id="s-ev">
+  <h2>Otras evidencias</h2>
+  <p class="lead">Después del CV y los proyectos, publica al menos dos actividades de desarrollo personal, dos de aprendizaje y dos de identidad profesional. Marca aquí las que ya publicaste.</p>
+  <div class="grid" id="evlist"></div>
+</section>
+</main>
+</div>
+<script src="app.js"></script>
+</body></html>
