@@ -3,8 +3,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Portafolio digital</title>
 <style>
-:root{--bg:#fdf4fa;--sf:#ffffff;--ink:#3a3450;--mute:#6f6a85;--line:#eadff3;--ac:#c9bdf7;--acink:#2f2760;--link:#6246c9;--ok:#2f7d62;--p1:#ffd1e3;--p2:#cfe6ff;--p3:#bfe8d6;--p4:#ffe3c9;--p5:#e3d8ff;color-scheme:light}
-@media(prefers-color-scheme:dark){:root{--bg:#241f36;--sf:#2e2945;--ink:#f1ecff;--mute:#b4accf;--line:#433c63;--ac:#b8a9f0;--acink:#231a4d;--link:#c9bdf7;--ok:#9fe0c4;--p1:#5a3a52;--p2:#33496a;--p3:#2f5648;--p4:#5e4635;--p5:#4a3d73;color-scheme:dark}}
+:root{--bg:#fdf4fa;--sf:#ffffff;--ink:#3a3450;--mute:#6f6a85;--line:#eadff3;--ac:#c9bdf7;--acink:#2f2760;--link:#6246c9;--p1:#ffd1e3;--p2:#cfe6ff;--p3:#bfe8d6;--p4:#ffe3c9;--p5:#e3d8ff;color-scheme:light}
+@media(prefers-color-scheme:dark){:root{--bg:#241f36;--sf:#2e2945;--ink:#f1ecff;--mute:#b4accf;--line:#433c63;--ac:#b8a9f0;--acink:#231a4d;--link:#c9bdf7;--p1:#5a3a52;--p2:#33496a;--p3:#2f5648;--p4:#5e4635;--p5:#4a3d73;color-scheme:dark}}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px}
 body{margin:0;background:linear-gradient(180deg,var(--p1) 0,var(--bg) 380px) fixed,var(--bg);color:var(--ink);font:400 1rem/1.6 system-ui,"Segoe UI",sans-serif}
 a{color:var(--link)}
@@ -18,20 +18,16 @@ h2{font-size:1.7rem;margin:0 0 6px}.lead{color:var(--mute);margin:0 0 20px}
 .hero .ini{width:150px;height:150px;border-radius:50%;flex:none;background:var(--ac);color:var(--acink);display:grid;place-items:center;font-size:3.4rem;font-weight:700}
 .hero h1{font-size:2.5rem;line-height:1.1;margin:0 0 6px}.hero p{margin:0 0 16px;color:var(--mute);font-size:1.1rem}
 .btn{display:inline-block;font:inherit;font-weight:600;background:var(--ac);color:var(--acink);border:0;border-radius:8px;padding:10px 18px;cursor:pointer;text-decoration:none}
-.btn.alt{background:var(--p2);color:var(--ink);border:0}
+.btn.alt{background:var(--p2);color:var(--ink)}
 .btn:hover{filter:brightness(.96)}
-button:focus-visible,a:focus-visible{outline:3px solid var(--link);outline-offset:2px}
+a:focus-visible{outline:3px solid var(--link);outline-offset:2px}
 .box{background:var(--sf);border:2px solid var(--p5);border-radius:18px;padding:18px}
-.drop{border:2px dashed var(--ac);background:var(--p5);border-radius:14px;padding:26px;text-align:center;color:var(--mute);cursor:pointer}
-.drop.on{background:var(--p2)}
-.drop strong{color:var(--ink)}
-#viewer{width:100%;height:640px;border:2px solid var(--p5);border-radius:12px;background:#fff;margin-top:14px}
+#viewer{width:100%;height:640px;border:2px solid var(--p5);border-radius:12px;background:#fff}
 .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-.note{font-size:.86rem;color:var(--mute);border-left:4px solid var(--p1);padding:6px 10px;margin:14px 0 0}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px}
 .card{background:var(--sf);border:1px solid var(--line);border-top:6px solid var(--p1);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:6px}
 .card h3{margin:0;font-size:1.1rem}.meta{font-size:.82rem;color:var(--mute)}
-.chip{display:inline-block;font-size:.76rem;font-weight:600;background:var(--p4);border:0;border-radius:99px;padding:1px 9px;margin-right:4px}
+.chip{display:inline-block;font-size:.76rem;font-weight:600;background:var(--p4);border-radius:99px;padding:1px 9px;margin-right:4px}
 .chip.st{background:var(--p3);color:var(--ink)}
 .card:nth-child(5n+2){border-top-color:var(--p2)}.card:nth-child(5n+3){border-top-color:var(--p3)}.card:nth-child(5n+4){border-top-color:var(--p4)}.card:nth-child(5n+5){border-top-color:var(--p5)}
 .empty{border:1px dashed var(--line);border-radius:12px;padding:24px;color:var(--mute);text-align:center;grid-column:1/-1}
@@ -44,21 +40,17 @@ footer{text-align:center;color:var(--mute);font-size:.85rem;padding:50px 24px 40
 
 <section id="inicio" class="hero">
   <div id="avatar"></div>
-  <div><h1 id="nombre">Tu nombre</h1><p id="titulo">Tu perfil profesional</p><p id="resumen" style="font-size:1rem"></p>
+  <div><h1 id="nombre"></h1><p id="titulo"></p><p id="resumen" style="font-size:1rem"></p>
   <a class="btn" href="#cv">Ver mi CV</a> <a class="btn alt" href="#proyectos">Ver proyectos</a></div>
 </section>
 
 <section id="cv">
   <h2>Mi CV</h2>
-  <p class="lead">Anexa tu CV en PDF para verlo aquí y descargarlo.</p>
+  <p class="lead">Aquí puedes ver y descargar mi currículum.</p>
   <div class="box">
-    <div class="drop" id="drop" tabindex="0" role="button" aria-label="Anexar CV en PDF">
-      <strong>Arrastra tu CV aquí</strong> o haz clic para elegir un archivo PDF
-      <input type="file" id="file" accept="application/pdf" hidden>
-    </div>
     <iframe id="viewer" title="Vista previa del CV" hidden></iframe>
-    <div class="row" id="acts" hidden><a class="btn" id="dl" download="CV.pdf">Descargar CV</a><button class="btn alt" id="chg">Cambiar archivo</button></div>
-    <p class="note" id="info"></p>
+    <p class="lead" id="nocv" style="margin:0">Mi CV estará disponible próximamente.</p>
+    <div class="row" id="acts" hidden><a class="btn" href="cv.pdf" download="CV.pdf">Descargar CV</a></div>
   </div>
 </section>
 
@@ -68,22 +60,46 @@ footer{text-align:center;color:var(--mute);font-size:.85rem;padding:50px 24px 40
 <footer>Portafolio digital</footer>
 
 <script>
+/* ============ TUS DATOS: edita solo esta parte ============ */
+const S={
+  cv:{
+    nombre:"AMERICA LIZETH ORTEGA FLORES",
+    titulo:"Estudiante de nivel superior",
+    resumen:"Hola! Soy estudiante del Tecnologico de Estudios Superiores de San Felipe del Progreso",
+    correo:"",
+    github:"",
+    linkedin:"",
+    foto:"foto.jpg"
+  },
+  proj:[
+    /* Para agregar un proyecto, copia este bloque y quita los símbolos de comentario:
+    {nombre:"Nombre del proyecto",tipo:"Software",estado:"Finalizado",contexto:"Materia o escuela",fecha:"Mayo 2026",problema:"Qué problema resuelve",tecnologias:"HTML, CSS, JavaScript",enlace:"https://"},
+    */
+  ]
+};
+/* ========================================================== */
+
 const $=s=>document.querySelector(s);
 const esc=t=>String(t||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-let S={cv:{},proj:[]};
-try{const r=localStorage.getItem("portafolio-v1");if(r)S=Object.assign(S,JSON.parse(r))}catch(e){}
 const c=S.cv;
 
 /* Datos personales */
-if(c.nombre){$("#nombre").textContent=c.nombre;$("#hn").textContent=c.nombre;document.title=c.nombre+" | Portafolio"}
-if(c.titulo)$("#titulo").textContent=c.titulo;
-$("#resumen").textContent=c.resumen||"";
-$("#avatar").innerHTML=/^data:image\//.test(c.foto||"")?`<img src="${c.foto}" alt="Foto de perfil" style="width:150px;height:150px;border-radius:50%;object-fit:cover;border:4px solid var(--p5)">`:`<div class="ini">${esc((c.nombre||"T").trim()[0].toUpperCase())}</div>`;
+$("#nombre").textContent=c.nombre;$("#hn").textContent=c.nombre;
+document.title=c.nombre+" | Portafolio";
+$("#titulo").textContent=c.titulo;
+$("#resumen").textContent=c.resumen;
+const inicial=`<div class="ini">${esc((c.nombre||"T").trim()[0].toUpperCase())}</div>`;
+if(c.foto){
+  const im=new Image();im.alt="Foto de perfil";
+  im.onload=()=>{$("#avatar").innerHTML="";$("#avatar").appendChild(im)};
+  im.onerror=()=>{$("#avatar").innerHTML=inicial};
+  $("#avatar").innerHTML=inicial;im.src=c.foto;
+}else $("#avatar").innerHTML=inicial;
 
 /* Contacto */
+const url=u=>/^https?:\/\//.test(u)?u:"https://"+u;
 const L=[];
 if(c.correo)L.push(`<a class="btn alt" href="mailto:${esc(c.correo)}">${esc(c.correo)}</a>`);
-const url=u=>/^https?:\/\//.test(u)?u:"https://"+u;
 if(c.github)L.push(`<a class="btn alt" target="_blank" rel="noopener" href="${esc(url(c.github))}">GitHub</a>`);
 if(c.linkedin)L.push(`<a class="btn alt" target="_blank" rel="noopener" href="${esc(url(c.linkedin))}">LinkedIn</a>`);
 $("#links").innerHTML=L.join("")||'<p class="lead">Próximamente.</p>';
@@ -95,26 +111,9 @@ $("#plist").innerHTML=S.proj.length?S.proj.map(p=>`<article class="card"><h3>${e
  ${p.problema?`<p>${esc(p.problema)}</p>`:""}${p.tecnologias?`<div class="meta">${esc(p.tecnologias)}</div>`:""}
  ${/^https?:\/\//.test(p.enlace||"")?`<a href="${esc(p.enlace)}" target="_blank" rel="noopener">Ver evidencia</a>`:""}</article>`).join(""):'<div class="empty">Aún no hay proyectos.</div>';
 
-/* CV en PDF */
-const V=$("#viewer"),drop=$("#drop"),file=$("#file");
-function show(src,name,publico){
-  V.src=src;V.hidden=false;drop.hidden=true;$("#acts").hidden=false;$("#dl").href=src;
-  $("#info").textContent=publico?"Este es el archivo cv.pdf publicado en tu sitio.":"Vista previa solo en tu navegador. Para que otras personas lo vean, sube este mismo archivo a tu repositorio de GitHub con el nombre cv.pdf.";
-}
-function load(f){
-  if(!f)return;
-  if(f.type!=="application/pdf"){alert("Elige un archivo PDF.");return}
-  if(f.size>10*1024*1024){alert("El PDF pesa más de 10 MB. Reduce su tamaño.");return}
-  show(URL.createObjectURL(f),f.name,false);
-}
-drop.onclick=()=>file.click();
-drop.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();file.click()}};
-file.onchange=()=>load(file.files[0]);
-["dragover","dragenter"].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.add("on")}));
-["dragleave","drop"].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.remove("on")}));
-drop.addEventListener("drop",e=>load(e.dataTransfer.files[0]));
-$("#chg").onclick=()=>{V.hidden=true;V.src="";drop.hidden=false;$("#acts").hidden=true;$("#info").textContent="";file.value=""};
-/* Si ya subiste cv.pdf al repositorio, se muestra automáticamente */
-fetch("cv.pdf",{method:"HEAD"}).then(r=>{if(r.ok)show("cv.pdf","cv.pdf",true)}).catch(()=>{});
+/* CV: se muestra automáticamente si existe cv.pdf en el repositorio */
+fetch("cv.pdf",{method:"HEAD"}).then(r=>{
+  if(r.ok){$("#viewer").src="cv.pdf";$("#viewer").hidden=false;$("#acts").hidden=false;$("#nocv").hidden=true}
+}).catch(()=>{});
 </script>
 </body></html>
