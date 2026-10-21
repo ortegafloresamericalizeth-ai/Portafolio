@@ -65,16 +65,14 @@ const S={
   cv:{
     nombre:"AMERICA LIZETH ORTEGA FLORES",
     titulo:"Estudiante de nivel superior",
-    resumen:"Hola! Soy estudiante del Tecnologico de Estudios Superiores de San Felipe del Progreso",
+    resumen:"Hola! Soy estudiante del Tecnológico de Estudios Superiores de San Felipe del Progreso.",
     correo:"",
     github:"",
     linkedin:"",
     foto:"foto.jpg"
   },
   proj:[
-    /* Para agregar un proyecto, copia este bloque y quita los símbolos de comentario:
-    {nombre:"Nombre del proyecto",tipo:"Software",estado:"Finalizado",contexto:"Materia o escuela",fecha:"Mayo 2026",problema:"Qué problema resuelve",tecnologias:"HTML, CSS, JavaScript",enlace:"https://"},
-    */
+    {nombre:"Modelo de IA de mantenimiento preventivo para plantas de sector transporte",tipo:"Software",estado:"Finalizado",contexto:"Programación, Ingeniería, Electrónica",fecha:"Junio-Julio 2026",problema:"Mantenimiento preventivo y correctivo",tecnologias:"GitBash",enlace:""}
   ]
 };
 /* ========================================================== */
@@ -91,29 +89,3 @@ $("#resumen").textContent=c.resumen;
 const inicial=`<div class="ini">${esc((c.nombre||"T").trim()[0].toUpperCase())}</div>`;
 if(c.foto){
   const im=new Image();im.alt="Foto de perfil";
-  im.onload=()=>{$("#avatar").innerHTML="";$("#avatar").appendChild(im)};
-  im.onerror=()=>{$("#avatar").innerHTML=inicial};
-  $("#avatar").innerHTML=inicial;im.src=c.foto;
-}else $("#avatar").innerHTML=inicial;
-
-/* Contacto */
-const url=u=>/^https?:\/\//.test(u)?u:"https://"+u;
-const L=[];
-if(c.correo)L.push(`<a class="btn alt" href="mailto:${esc(c.correo)}">${esc(c.correo)}</a>`);
-if(c.github)L.push(`<a class="btn alt" target="_blank" rel="noopener" href="${esc(url(c.github))}">GitHub</a>`);
-if(c.linkedin)L.push(`<a class="btn alt" target="_blank" rel="noopener" href="${esc(url(c.linkedin))}">LinkedIn</a>`);
-$("#links").innerHTML=L.join("")||'<p class="lead">Próximamente.</p>';
-
-/* Proyectos */
-$("#plist").innerHTML=S.proj.length?S.proj.map(p=>`<article class="card"><h3>${esc(p.nombre)}</h3>
- <div><span class="chip">${esc(p.tipo)}</span><span class="chip st">${esc(p.estado)}</span></div>
- <div class="meta">${[p.contexto,p.fecha].filter(Boolean).map(esc).join(" | ")}</div>
- ${p.problema?`<p>${esc(p.problema)}</p>`:""}${p.tecnologias?`<div class="meta">${esc(p.tecnologias)}</div>`:""}
- ${/^https?:\/\//.test(p.enlace||"")?`<a href="${esc(p.enlace)}" target="_blank" rel="noopener">Ver evidencia</a>`:""}</article>`).join(""):'<div class="empty">Aún no hay proyectos.</div>';
-
-/* CV: se muestra automáticamente si existe cv.pdf en el repositorio */
-fetch("cv.pdf",{method:"HEAD"}).then(r=>{
-  if(r.ok){$("#viewer").src="cv.pdf";$("#viewer").hidden=false;$("#acts").hidden=false;$("#nocv").hidden=true}
-}).catch(()=>{});
-</script>
-</body></html>
